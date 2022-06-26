@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wahaha
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wahaha
+  template:
+    metadata:
+      labels:
+        app: wahaha
+    spec:
+      containers:
+      - image: okteto.dev/wahaha:latest
+        name: wahaha
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "af35dca0-6da1-4dec-91a2-c4e4fac42d9e"
+        - name: Vless_Path
+          value: "/s233"
+        - name: Vmess_UUID
+          value: "af35dca0-6da1-4dec-91a2-c4e4fac42d9e"
+        - name: Vmess_Path
+          value: "/s244"
+        - name: Share_Path
+          value: "/share233"
